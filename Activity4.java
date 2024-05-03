@@ -91,8 +91,8 @@ class Answer{
 class Moderator {
     private int moderatorID;
     private String privileges;
+    private List<User> users;
 
-    
 
     public void deletePost(){};
     public void banUser(){};
@@ -100,6 +100,9 @@ class Moderator {
 class Admin {
     private int adminID;
     private String privileges;
+    private List<Moderator> moderators;
+    private List<User> users;
+    private List<Report> reports;
 
     public void deletePost(){};
     public void banUser(){};
