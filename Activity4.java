@@ -1,8 +1,14 @@
 import java.util.List;
 class User{
+    private String username;
+    private String ipAddress;
+    private Boolean sessionStatus;
+
+    public void viewQuestion(){};
+    public void viewAnswer(){};
 
 }
-class guestUser {
+class guestUser extends User {
     private String guestID;
 
     public  void browseQuestion(){
@@ -12,7 +18,7 @@ class guestUser {
     
  
 }
-class registeredUser {
+class registeredUser extends User {
     private String userID;
     private String registeredDate;
     private String subscriptionType; 
@@ -32,26 +38,77 @@ class registeredUser {
     
 }
 class Subscription {
-    private int subscibtionId;
+    private int subscibtionID;
     private String subscriptionEndDate;
-    private String subscriptionType;
 
-    public void UpdatePremium(){};
+    public void createSubscription(){};
+    public void cancelSubscription(){};
     
 }
-class Payment {
-    private int paymentId;
+class PaymentType {
+    private int paymentID;
     private Double paymentAmount; 
 
 
-    public void viewQuestionDetail(){};
+    public void processPayment(){};
+    public void cancelPayment(){};
+    public void getAvailableCredit(){};
 }
 
+class creditCard extends PaymentType{
+    private String paymentDetail;
+
+    public void processCardPayment(){};
+}
+class paypal extends PaymentType{
+    private String paypaltDetail;
+
+    public void processPaypalPayment(){};
+}
+class paymentCompany{
+    private String companyName;
+    private String companyID;
+
+    public void verifyPayment(){};
+    public void cancelPayment(){};
+
+
+}
 class Question{
+    private int questionID;
+    private String title;
+    private String content; 
 
+    public void viewStatistic(){};
 }
-class Answer{}
-class Main {
-    
+class Answer{
+    private int qanswerID;
+    private String content; 
+
+    public void viewStatistic(){};
+}
+class Moderator {
+    private int moderatorID;
+    private String privileges;
+
+    public void deletePost(){};
+    public void banUser(){};
+}
+class Admin {
+    private int adminID;
+    private String privileges;
+
+    public void deletePost(){};
+    public void banUser(){};
+    public void manageRole(){};
+}
+class Report{
+    private int reportID;
+    private String description;
+
+    public Report createReport(){
+        return null;
+    };
+    public void banUser(){};
 }
 
