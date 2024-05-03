@@ -78,6 +78,7 @@ class Question{
     private int questionID;
     private String title;
     private String content; 
+    private List<Answer> answers;
 
     public void viewStatistic(){};
 }
@@ -90,6 +91,8 @@ class Answer{
 class Moderator {
     private int moderatorID;
     private String privileges;
+
+    
 
     public void deletePost(){};
     public void banUser(){};
