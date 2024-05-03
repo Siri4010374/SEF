@@ -5,26 +5,30 @@ class User{
 class guestUser {
     private String guestID;
 
-    public void browseQuestion{
-        return 
+    public  void browseQuestion(){
+        return ;
     }
-    public viewQuestionDetail();
-
-
+    public void viewQuestionDetail(){};
     
+ 
 }
 class registeredUser {
     private String userID;
     private String registeredDate;
     private String subscriptionType; 
+    private Question question;
 
-    public logIn();
-    public viewQuestionDetail();
-    public askQuestion();
-    public answerQuestion();
-    public editQuestion();
-    public editAnswer();
-    public buyPremiumTier();
+    public void logIn(){};
+    public void viewQuestionDetail(){};
+    public void askQuestion(){};
+    public void answerQuestion(){};
+    public Question editQuestion(){
+        return null;
+    };
+    public Answer editAnswer(){
+        return null;
+    };
+    public void buyPremiumTier(){};
     
 }
 class Subscription {
@@ -32,19 +36,21 @@ class Subscription {
     private String subscriptionEndDate;
     private String subscriptionType;
 
-    public void UpdatePremium();
+    public void UpdatePremium(){};
     
 }
 class Payment {
-    private Int paymentId;
+    private int paymentId;
     private Double paymentAmount; 
 
-    public logIn();
-    public viewQuestionDetail();
+
+    public void viewQuestionDetail(){};
 }
-class Main {
-    
+
+class Question{
+
 }
+class Answer{}
 class Main {
     
 }
