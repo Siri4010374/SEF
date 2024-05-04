@@ -79,10 +79,10 @@ class Question{
     private String title;
     private String content; 
 
-    public void viewStatistic(){};
+    public int viewStatistic(){};
 }
 class Answer{
-    private int qanswerID;
+    private int answerID;
     private String content; 
 
     public void viewStatistic(){};
@@ -106,8 +106,9 @@ class Report{
     private int reportID;
     private String description;
 
-    public Report createReport(){
-        return null;
+    public Report createReport(String reportContent){
+        Report report = new Report();
+        return report;
     };
     public void banUser(){};
 }
