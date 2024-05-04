@@ -1,4 +1,5 @@
 import java.util.List;
+
 class User{
     private String username;
     private String ipAddress;
@@ -15,27 +16,36 @@ class guestUser extends User {
         return ;
     }
     public void viewQuestionDetail(){};
-    
- 
+
+
 }
 class registeredUser extends User {
     private String userID;
     private String registeredDate;
-    private String subscriptionType; 
+    private String subscriptionType;
     private Question question;
+    private Answer answer;
 
     public void logIn(){};
     public void viewQuestionDetail(){};
-    public void askQuestion(){};
-    public void answerQuestion(){};
+    public Question askQuestion(String questionContent){
+        Question newQuestion= new Question();
+        return newQuestion;
+    };
+    public Answer answerQuestion(String answerContent){
+        Answer newAnswer = new Answer();
+        return newAnswer;
+    };
     public Question editQuestion(){
-        return null;
+        Question editedQuestion = new Question();
+        return editedQuestion;
     };
     public Answer editAnswer(){
-        return null;
+        Answer editedAnswer =new Answer();
+        return editedAnswer;
     };
     public void buyPremiumTier(){};
-    
+
 }
 class Subscription {
     private int subscibtionID;
@@ -43,11 +53,11 @@ class Subscription {
 
     public void createSubscription(){};
     public void cancelSubscription(){};
-    
+
 }
 class PaymentType {
     private int paymentID;
-    private Double paymentAmount; 
+    private Double paymentAmount;
 
 
     public void processPayment(){};
@@ -77,16 +87,18 @@ class paymentCompany{
 class Question{
     private int questionID;
     private String title;
-    private String content; 
+    private String content;
     private List<Answer> answers;
 
-    public int viewStatistic(){};
+    public int viewStatistic(){
+        return 0;
+    };
 }
 class Answer{
     private int answerID;
-    private String content; 
+    private String content;
 
-    public void viewStatistic(){};
+    public int viewStatistic(){return 0;};
 }
 class Moderator {
     private int moderatorID;
@@ -118,4 +130,5 @@ class Report{
     };
     public void banUser(){};
 }
+
 
