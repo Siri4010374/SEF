@@ -8,6 +8,8 @@ class User{
 
     public void viewQuestion(){};
     public void viewAnswer(){};
+    public void filterQuestions(){};
+    public void filterAnswer(){};
 
 }
 class guestUser extends User {
@@ -15,14 +17,14 @@ class guestUser extends User {
 
     public  void browseQuestion(){
     }
-    public void viewQuestionDetail(){};
+
 
 
 }
 class registeredUser extends User {
     private String userID;
     private String registeredDate;
-    private Subscription subscriptionType;
+    private Subscription subscription;
     private Question question;
     private Answer answer;
 
@@ -36,17 +38,19 @@ class registeredUser extends User {
         Answer newAnswer = new Answer();
         return newAnswer;
     };
-    public Question editQuestion(){
+    public Question editQuestion(int questionID){
         Question editedQuestion = new Question();
         return editedQuestion;
     };
-    public Answer editAnswer(){
+    public Answer editAnswer(int answerID){
         Answer editedAnswer =new Answer();
         return editedAnswer;
     };
     public void buyPremiumTier(){};
     public void upVote(){};
     public void downVote(){};
+    public void deleteQuestioin(){};
+    public void deleteAnswer(){};
 
 
 }
@@ -81,6 +85,7 @@ class paypal extends PaymentType{
 class paymentCompany{
     private String companyName;
     private String companyID;
+    private List<PaymentType> paymentTypeList;
 
     public void verifyPayment(){};
     public void cancelPayment(){};
@@ -93,13 +98,13 @@ class Question{
     private String content;
     private List<Answer> answers;
 
-    public String getDetails(){return toString();};
+    public String getDetails(){};
 }
 class Answer{
     private int answerID;
     private String content;
 
-    public String getDetails(){return toString();};
+    public String getDetails(){};
 }
 class Moderator {
     private int moderatorID;
