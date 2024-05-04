@@ -21,7 +21,7 @@ class guestUser extends User {
 
 
 }
-class registeredUser extends User {
+class RegisteredUser extends User {
     private String userID;
     private String registeredDate;
     private Subscription subscription;
