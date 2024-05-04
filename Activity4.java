@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.List;
 
 class User{
@@ -13,7 +14,6 @@ class guestUser extends User {
     private String guestID;
 
     public  void browseQuestion(){
-        return ;
     }
     public void viewQuestionDetail(){};
 
@@ -22,7 +22,7 @@ class guestUser extends User {
 class registeredUser extends User {
     private String userID;
     private String registeredDate;
-    private String subscriptionType;
+    private Subscription subscriptionType;
     private Question question;
     private Answer answer;
 
@@ -45,6 +45,9 @@ class registeredUser extends User {
         return editedAnswer;
     };
     public void buyPremiumTier(){};
+    public void upVote(){};
+    public void downVote(){};
+
 
 }
 class Subscription {
@@ -90,15 +93,13 @@ class Question{
     private String content;
     private List<Answer> answers;
 
-    public int viewStatistic(){
-        return 0;
-    };
+    public String getDetails(){return toString();};
 }
 class Answer{
     private int answerID;
     private String content;
 
-    public int viewStatistic(){return 0;};
+    public String getDetails(){return toString();};
 }
 class Moderator {
     private int moderatorID;
@@ -119,16 +120,29 @@ class Admin {
     public void deletePost(){};
     public void banUser(){};
     public void manageRole(){};
-}
-class Report{
-    private int reportID;
-    private String description;
-
     public Report createReport(String reportContent){
         Report report = new Report();
         return report;
     };
-    public void banUser(){};
+    public void submitReport(){};
+}
+class Report{
+    private int reportID;
+    private String description;
+    private Date reportDate;
+
+    public Date getReportDate() {
+        return reportDate;
+    }
+
+    public String getContent() {
+        return description;
+    }
 }
 
+public class Main {
+    public static void main(String[] args) {
+
+    }
+}
 
